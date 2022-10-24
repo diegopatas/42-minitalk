@@ -2,7 +2,7 @@ LINKER			= gcc
 COMPILER		= $(LINKER) -c
 
 REMOVE			= rm
-REMOVE_FORCE	= $(REMOVE)-rf
+REMOVE_FORCE	= $(REMOVE) -rf
 MAKE_DIR		= mkdir -p
 DEBUG			= gdb -q -tui
 MEMCHECK		= valgrind
