@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:00:01 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/10/06 19:01:45 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/10/21 15:43:58 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <unistd.h>
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct s_list
 {
