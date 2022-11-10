@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:55:57 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/10/24 19:27:53 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/09 23:02:43 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static	int	message_char_send(int target_pid, unsigned char target_char)
 		else
 			kill(target_pid, SIGUSR2);
 		mask >>= 1;
-		usleep(200);
+		usleep(500);
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 static	int	message_send(int target_pid, const char *message)
@@ -36,6 +36,7 @@ static	int	message_send(int target_pid, const char *message)
 		message_char_send(target_pid, *message);
 		message++;
 	}
+	ft_printf("\nEnding transmission...%c\n", 0);
 	return (EXIT_SUCCESS);
 }
 
