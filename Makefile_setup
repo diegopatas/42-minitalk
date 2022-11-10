@@ -13,7 +13,10 @@ FLAG_LEAK		+= -s
 
 PATH_INCLUDES	= includes
 PATH_SOURCES	= sources
-PATH_OBJECTS	= objects
+PATH_CLIENT_OBJECTS	= objects_client
+PATH_SERVER_OBJECTS	= objects_server
+PATH_BONUS_CLIENT_OBJECTS	= objects_bonus_client
+PATH_BONUS_SERVER_OBJECTS	= objects_bonus_server
 PATH_LIBRARIES	= libraries
 PATH_TESTS		= tests
 PATH_LIBFT		= $(PATH_LIBRARIES)/libft
