@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:41 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/10/24 19:32:29 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/09 23:04:20 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,16 @@ void	signal_handler(int signal)
 int	main(void)
 {
 	ft_printf("Server's PID: %d\n", (int)getpid());
-	signal(SIGUSR1, signal_handler);
-	signal(SIGUSR2, signal_handler);
+	if (signal(SIGUSR1, signal_handler) == SIG_ERR)
+	{
+		ft_printf("Fatal: signal setting failed!%c\n", 0);
+		exit(EXIT_FAILURE);
+	}
+	if (signal(SIGUSR2, signal_handler) == SIG_ERR)
+	{
+		ft_printf("Fatal: signal setting failed!%c\n", 0);
+		exit(EXIT_FAILURE);
+	}
 	while (1)
 		pause();
 	return (0);
