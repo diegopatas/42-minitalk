@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:55:57 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/11/11 12:07:03 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/11 12:42:06 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static volatile int	g_answer;
 static	void	signal_handler(int signal)
 {
 	if (signal == SIGUSR1)
-		g_answer = 1;
+		g_answer = TRUE;
 	return ;
 }
 
@@ -29,8 +29,8 @@ static	int	message_char_send(int target_pid, unsigned char target_char)
 	mask = 1 << 7;
 	while (mask)
 	{
-		usleep(750);
-		g_answer = 0;
+		g_answer = FALSE;
+		usleep(MICROSECS);
 		if (target_char & mask)
 			kill(target_pid, SIGUSR1);
 		else
