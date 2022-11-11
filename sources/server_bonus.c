@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 13:05:41 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/11/10 18:19:04 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/11 12:08:36 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ int	main(void)
 	ft_printf("Server's PID: %d\n", (int)getpid());
 	if (sigaction(SIGUSR1, &act, 0) < 0)
 	{
-		ft_printf("Fatal: sigaction setting failed!%c\n", 0);
+		ft_printf("Fatal: SIGUSR1 setting failed!%c\n", 0);
 		exit(EXIT_FAILURE);
 	}
 	if (sigaction(SIGUSR2, &act, 0) < 0)
 	{
-		ft_printf("Fatal: sigaction setting failed!%c\n", 0);
+		ft_printf("Fatal: SIGUSR2 setting failed!%c\n", 0);
 		exit(EXIT_FAILURE);
 	}
 	while (1)
