@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:55:57 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/11/10 19:10:25 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/11 11:12:47 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static	int	message_char_send(int target_pid, unsigned char target_char)
 			kill(target_pid, SIGUSR1);
 		else
 			kill(target_pid, SIGUSR2);
-		usleep(500);
+		usleep(1500);
 		mask >>= 1;
 		while (g_answer != 1)
 			;
