@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:55:57 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/11/09 23:02:43 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/11/11 10:42:22 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static	int	message_char_send(int target_pid, unsigned char target_char)
 		else
 			kill(target_pid, SIGUSR2);
 		mask >>= 1;
-		usleep(500);
+		usleep(2500);
 	}
 	return (EXIT_SUCCESS);
 }
